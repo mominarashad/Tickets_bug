@@ -1,9 +1,35 @@
-# 🧠 Tickets: Hybrid Issue Retrieval System
-
-A FastAPI-based application for intelligent issue retrieval using both **BM25 ranking** and **vector embeddings**. Built for efficient search on structured data from an Excel file (e.g., issue descriptions, titles).
-
+---
+title: Tickets Issue Search (MCP)
+emoji: 🧠
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+app_port: 8000
+sdk_version: 1.0.0
+mcp_server: true
+license: mit
 ---
 
+# 🎫 Tickets Issue Search (Hybrid RAG Tool)
+
+A FastAPI-based hybrid retrieval tool using BM25 + Embedding search, connected to MongoDB, built for issue resolution.
+
+## ✅ MCP Tool Support
+
+This app supports [MCP](https://huggingface.co/docs/hub/spaces-mcp-servers) and exposes:
+
+- `/invocations`: Main inference endpoint
+- `/metadata`: Tool metadata for LLMs
+- `/healthz`: Health check
+
+## 📦 How to Query
+
+```bash
+curl -X POST https://your-space-url.hf.space/invocations \
+  -H "Content-Type: application/json" \
+  -d '{"inputs": "Why is data not syncing in dashboard?"}'
+```
+---
 ## 📁 Project Structure
 
 ```bash
